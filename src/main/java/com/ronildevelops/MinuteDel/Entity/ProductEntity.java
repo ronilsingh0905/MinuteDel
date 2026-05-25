@@ -26,7 +26,7 @@ public class ProductEntity {
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    private CATEGORY category;
+    private Category category;
 
 
 

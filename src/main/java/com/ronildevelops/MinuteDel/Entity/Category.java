@@ -1,6 +1,6 @@
 package com.ronildevelops.MinuteDel.Entity;
 
-public enum CATEGORY {
+public enum Category {
     GROCERY,
     DAIRY,
     MUNCHIES,
