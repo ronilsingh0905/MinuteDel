@@ -19,7 +19,7 @@ public class RiderEntity {
     private Long id;
 
     @OneToOne
-    @JoinColumn(name="user_id",nullable = false)
+    @JoinColumn(name="user_id",nullable = false,updatable = false)
     private UserEntity userEntity;
 
     @Column(nullable = false)

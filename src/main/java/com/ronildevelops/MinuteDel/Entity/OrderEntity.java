@@ -13,14 +13,14 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "orders")
+@Table(name = "customer_orders")
 public class OrderEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "user")
+    @JoinColumn(name = "customer")
     private UserEntity userEntity;
 
     @ManyToOne
@@ -45,7 +45,7 @@ public class OrderEntity {
     @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;
 
-    @Coloum(nullable = false)
+    @Column(nullable = false)
     private double totalAmount;
 
     @Column(nullable = false)
