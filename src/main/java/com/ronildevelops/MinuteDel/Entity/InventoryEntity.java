@@ -29,6 +29,9 @@ public class InventoryEntity {
     @Column(nullable = false)
     private int availableQuantity;
 
+    @Column(nullable = false)
+    private double currPrice;
+
     @Version
     private Long version;
 

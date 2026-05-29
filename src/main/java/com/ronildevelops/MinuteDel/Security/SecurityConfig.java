@@ -32,6 +32,7 @@ public class SecurityConfig {
                         .requestMatchers("/cart/**", "/orders/**").hasRole("CUSTOMER")
                         .requestMatchers("/rider/**").hasRole("RIDER")
                         .requestMatchers("/inventory/**", "/darkStore/**").hasRole("STORE_MANAGER")
+                        .requestMatchers("/product/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtAuthenticationFilter,
