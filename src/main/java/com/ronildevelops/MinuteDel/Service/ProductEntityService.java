@@ -17,6 +17,12 @@ public class ProductEntityService {
     ProductEntityRepository productEntityRepository;
 
     public ProductCreationResponseDTO createProduct(ProductCreationRequestDTO dto1){
+        if(dto1.getPrice()<=0){
+            ProductCreationResponseDTO responseDTO = new ProductCreationResponseDTO();
+            responseDTO.setSuccess(false);
+            responseDTO.setMessage("FATAL ERROR: product cannot be priced equal or less than 0!");
+            return responseDTO;
+        }
         if(productEntityRepository.existsByName(dto1.getName())){
             ProductCreationResponseDTO responseDTO = new ProductCreationResponseDTO();
             responseDTO.setSuccess(false);
@@ -41,6 +47,12 @@ public class ProductEntityService {
     }
 
     public ProductModificationResponseDTO modifyProduct(ProductModificationRequestDTO dto1){
+        if(dto1.getPrice()<=0){
+            ProductModificationResponseDTO responseDTO = new ProductModificationResponseDTO();
+            responseDTO.setSuccess(false);
+            responseDTO.setMessage("FATAL ERROR: product cannot be priced equal or less than 0!");
+            return responseDTO;
+        }
         Optional<ProductEntity> productOptional = productEntityRepository.findById(dto1.getId());
 
         if (productOptional.isEmpty()) {
