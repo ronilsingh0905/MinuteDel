@@ -29,11 +29,11 @@ public class DarkStoreEntity {
     private double longitude;
 
     @Column(nullable = false)
-    private boolean isAtCapacity; // for capacity overflow
+    private boolean capacity; // for capacity overflow
 
 
     @Column(nullable = false)
-    private boolean isAvailable;
+    private boolean available;
 
 
 
