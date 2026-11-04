@@ -29,6 +29,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
 
                         .requestMatchers(HttpMethod.POST, "/user/login", "/user/register").permitAll()
+                        .requestMatchers("/stores/**").permitAll()
                         .requestMatchers("/cart/**", "/orders/**").hasRole("CUSTOMER")
                         .requestMatchers("/rider/**").hasRole("RIDER")
                         .requestMatchers("/inventory/**", "/darkStore/**").hasRole("STORE_MANAGER")
